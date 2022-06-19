@@ -5,7 +5,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
-public class KafkaListeners {
+public class KafkaConsumer {
 //
 //    @KafkaListener(topics = "amigoscode", groupId = "groupIdFoo")
 //    void listener(String data) {

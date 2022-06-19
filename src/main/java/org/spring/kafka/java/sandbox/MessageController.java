@@ -17,10 +17,17 @@ public class MessageController {
     private KafkaTemplate<Object, MessageRequest> kafkaTemplate;
 
 
+   @Autowired
+   private KafkaProducer producer;
+
+
     @PostMapping
     public MessageRequest publish(@RequestBody MessageRequest request) {
-        System.out.println("Printing a message from Kafka Publish Controller!");
-        kafkaTemplate.send("darren-topic", request);
+//        System.out.println("Printing a message from Kafka Publish Controller!");
+//        kafkaTemplate.send("darren-topic", request);
+
+        producer.send("darren-topic", request);
+
         return request;
     }
 }
